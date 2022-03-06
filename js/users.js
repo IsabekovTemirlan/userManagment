@@ -8,7 +8,7 @@
     const response = await fetch('https://h4w8jr79rj.execute-api.eu-central-1.amazonaws.com/prod/users', {
       method: 'GET',
       headers: myHeaders,
-      mode: 'cors', // no-cors, *cors, same-origin
+      mode: 'no-cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'same-origin', // include, *same-origin, omit
     });
