@@ -1,6 +1,6 @@
 (async function () {
   const myHeaders = new Headers({
-    'Authorization': 'Token ' + localStorage.getItem('CognitoIdentityServiceProvider.2ld7vl8f5uknh7n37ac5ohve6j.temirlan.i-at-mvpngn.com.accessToken'),
+    'Authorization': localStorage.getItem('CognitoIdentityServiceProvider.2ld7vl8f5uknh7n37ac5ohve6j.temirlan.i-at-mvpngn.com.accessToken'),
     'Content-Type': 'application/x-www-form-urlencoded'
   });
 
