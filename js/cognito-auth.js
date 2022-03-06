@@ -3,14 +3,14 @@
 const AppContext = window.AppContext || {};
 
 (function () {
-	var signinUrl = '/signin.html';
+	const signinUrl = '/signin.html';
 
-	var poolData = {
+	const poolData = {
 		UserPoolId: _config.cognito.userPoolId,
 		ClientId: _config.cognito.userPoolClientId
 	};
 
-	var userPool;
+	let userPool;
 
 	if (!(_config.cognito.userPoolId &&
 			_config.cognito.userPoolClientId &&
@@ -47,6 +47,8 @@ const AppContext = window.AppContext || {};
 			resolve(null);
 		}
 	});
+
+	onDocReady();
 
 
 	/*
@@ -109,11 +111,11 @@ const AppContext = window.AppContext || {};
 	 *  Event Handlers
 	 */
 
-	$(function onDocReady() {
+	function onDocReady() {
 		document.getElementById('signinForm').onsubmit = (e) => handleSignin(e);
 		document.getElementById('registrationForm').onsubmit = (e) => handleRegister(e);
 		document.getElementById('verifyForm').onsubmit = (e) => handleVerify(e);
-	});
+	}
 
 	function handleSignin(event) {
 		event.preventDefault();
