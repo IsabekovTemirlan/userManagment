@@ -4,7 +4,7 @@
     'Content-Type': 'application/x-www-form-urlencoded'
   });
 
-  const response = await fetch({
+  const response = await fetch('https://main.d3o1uetdft0902.amplifyapp.com/users', {
     method: 'GET',
     headers: myHeaders,
     mode: 'cors', // no-cors, *cors, same-origin
