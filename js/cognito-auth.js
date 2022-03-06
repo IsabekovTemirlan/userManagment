@@ -26,7 +26,7 @@ const AppContext = window.AppContext || {};
 		AWSCognito.config.region = _config.cognito.region;
 	}
 
-	WildRydes.signOut = function signOut() {
+	AppContext.signOut = function signOut() {
 		userPool.getCurrentUser().signOut();
 	};
 
