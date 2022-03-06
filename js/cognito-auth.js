@@ -112,9 +112,12 @@ const AppContext = window.AppContext || {};
 	 */
 
 	function onDocReady() {
-		document.getElementById('signinForm').onsubmit = (e) => handleSignin(e);
-		document.getElementById('registrationForm').onsubmit = (e) => handleRegister(e);
-		document.getElementById('verifyForm').onsubmit = (e) => handleVerify(e);
+		const sigInForm = document.getElementById('signinForm');
+		if (sigInForm) sigInForm.onsubmit = (e) => handleSignin(e);
+		const registerForm = document.getElementById('registrationForm');
+		if (registerForm) registerForm.onsubmit = (e) => handleRegister(e);
+		const verifyForm = document.getElementById('verifyForm');
+		if (verifyForm) verifyForm.onsubmit = (e) => handleVerify(e);
 	}
 
 	function handleSignin(event) {
