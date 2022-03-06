@@ -131,6 +131,7 @@ const AppContext = window.AppContext || {};
 	}
 
 	function handleRegister(event) {
+		event.preventDefault();
 		const email = document.getElementById('emailInputRegister').value;
 		const password = document.getElementById('passwordInputRegister').value;
 		const password2 = document.getElementById('password2InputRegister').value;
@@ -146,7 +147,6 @@ const AppContext = window.AppContext || {};
 		const onFailure = function registerFailure(err) {
 			alert(err);
 		};
-		event.preventDefault();
 
 		if (password === password2) {
 			register(email, password, onSuccess, onFailure);
