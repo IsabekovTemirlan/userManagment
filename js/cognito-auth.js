@@ -127,7 +127,7 @@ const AppContext = window.AppContext || {};
 		signin(email, password,
 			function signinSuccess() {
 				console.log('Successfully Logged In');
-				window.location.href = 'ride.html';
+				window.location.href = 'users.html';
 			},
 			function signinError(err) {
 				alert(err);
