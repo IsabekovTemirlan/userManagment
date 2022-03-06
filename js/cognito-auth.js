@@ -49,6 +49,7 @@ const AppContext = window.AppContext || {};
 	});
 
 	onDocReady();
+	window.AppContext = AppContext;
 
 
 	/*
