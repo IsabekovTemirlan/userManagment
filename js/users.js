@@ -5,7 +5,7 @@
   });
 
   try {
-    const response = await fetch('https://main.d3o1uetdft0902.amplifyapp.com/users', {
+    const response = await fetch('https://h4w8jr79rj.execute-api.eu-central-1.amazonaws.com/prod/users', {
       method: 'GET',
       headers: myHeaders,
       mode: 'cors', // no-cors, *cors, same-origin

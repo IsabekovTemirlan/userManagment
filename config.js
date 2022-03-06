@@ -5,8 +5,9 @@ window._config = {
     region: 'eu-central-1'
   },
   api: {
-    invokeUrl: ''
+    invokeUrl: 'https://h4w8jr79rj.execute-api.eu-central-1.amazonaws.com/prod'
   }
 };
 
 // db arn - arn:aws:dynamodb:eu-central-1:644484453038:table/Todo
+// arn:aws:lambda:eu-central-1:644484453038:function:RequestUserManagment
