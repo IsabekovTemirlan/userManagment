@@ -49,8 +49,6 @@ const AppContext = window.AppContext || {};
 	});
 
 	onDocReady();
-	window.AppContext = AppContext;
-
 
 	/*
 	 * Cognito User Pool functions

@@ -5,7 +5,7 @@
     const response = await fetch(_config.api.invokeUrl + '/users', {
       method: 'GET',
       headers: {
-          'Authorization': token,
+        'Authorization': token,
       },
       cache: 'no-cache',
     });
@@ -15,6 +15,5 @@
 
   } catch (error) {
     console.log(error)
-    // window.location.href = '/signin.html';
   }
 })()
