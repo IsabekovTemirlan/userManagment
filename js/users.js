@@ -12,8 +12,8 @@
     const result = await response.json();
     if (result && result.body) {
       const data = JSON.parse(result.body);
-      if (data.length) {
-        setUsers(data)
+      if (data && data.Items) {
+        setUsers(data.Items);
       }
     }
   } catch (error) {
