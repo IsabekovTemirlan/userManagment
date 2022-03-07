@@ -12,7 +12,7 @@ form.onsubmit = async (e) => {
   const response = await fetch(_config.api.invokeUrl + '/users', {
     method: 'POST',
     cache: 'no-cache',
-    mode: 'no-cors',
+    mode: 'cors',
     headers: {
       'Authorization': token,
       'Content-Type': 'application/json'
@@ -26,7 +26,9 @@ form.onsubmit = async (e) => {
 
   if (response) {
     const result = await response.json();
-    console.log(result);
+    const data = JSON.parse(result.data);
+    if (data && data.text) alert(data.text);
+    window.location.href = 'users.html';
   }
 
 }
