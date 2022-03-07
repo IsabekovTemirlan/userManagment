@@ -2,10 +2,11 @@ const form = document.getElementById('addUserForm');
 form.onsubmit = async (e) => {
   e.preventDefault();
 
-  const fullName = form.getElementById('userName').value;
-  const email = form.getElementById('userEmail').value;
-  const phone = form.getElementById('userPhone').value;
-  const age = form.getElementById('userAge').value;
+  const fullName = form['0'].value;
+  const email = form['1'].value;
+  const phone = form['2'].value;
+  const age = form['3'].value;
+  
   const token = await AppContext.authToken
 
   const response = await fetch(_config.api.invokeUrl + '/users', {
