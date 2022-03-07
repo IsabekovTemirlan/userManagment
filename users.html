@@ -7,9 +7,31 @@
   <title>All users</title>
 </head>
 <body>
-  <ul id="usersContainer">
+  <style>
     
-  </ul>
+    table {
+      border-collapse: collapse;
+      font-size: 20px;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 2px 5px;
+    }
+  </style>
+  <h1>Add user form</h1>
+  <button><a href="/addUser.html">Add user</a></button>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <td>#</td><td>Full name</td><td>Email</td><td>Phone</td><td>Age</td><td>Action</td>
+      </tr>
+    </thead>
+    <tbody id="usersContainer">
+
+    </tbody>
+  </table>
 
   <script src="js/vendor/aws-cognito-sdk.min.js"></script>
   <script src="js/vendor/amazon-cognito-identity.min.js"></script>

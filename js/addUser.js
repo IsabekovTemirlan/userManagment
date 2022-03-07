@@ -2,10 +2,10 @@ const form = document.getElementById('addUserForm');
 form.onsubmit = async (e) => {
   e.preventDefault();
 
-  const fullName = form['0'].value;
-  const email = form['1'].value;
-  const phone = form['2'].value;
-  const age = form['3'].value;
+  const fullName = document.getElementById('userName').value;
+  const email = document.getElementById('userEmail').value;
+  const phone = document.getElementById('userPhone').value;
+  const age = document.getElementById('userAge').value;
 
   const token = await AppContext.authToken
 
