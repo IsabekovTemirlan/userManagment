@@ -26,7 +26,7 @@ form.onsubmit = async (e) => {
 
   if (response) {
     const result = await response.json();
-    const data = JSON.parse(result.data);
+    const data = JSON.parse(result.body);
     if (data && data.text) alert(data.text);
     window.location.href = 'users.html';
   }
