@@ -6,17 +6,18 @@ form.onsubmit = async (e) => {
   const email = form['1'].value;
   const phone = form['2'].value;
   const age = form['3'].value;
-  
+
   const token = await AppContext.authToken
 
   const response = await fetch(_config.api.invokeUrl + '/users', {
     method: 'POST',
     cache: 'no-cache',
+    mode: 'no-cors',
     headers: {
       'Authorization': token,
+      'Content-Type': 'application/json'
     },
     credentials: 'same-origin', 
-    cache: 'no-cache',
     referrerPolicy: 'no-referrer',
     body: JSON.stringify({
       fullName, email, phone, age
