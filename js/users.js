@@ -1,7 +1,7 @@
 (async function () {
   try {
     const token = await AppContext.authToken
-    if (!token) window.location.href = '/signin.html';
+    // if (!token) window.location.href = '/signin.html';
 
     const myHeaders = new Headers({
       'Authorization': token
@@ -20,6 +20,6 @@
 
   } catch (error) {
     console.log(error)
-    window.location.href = '/signin.html';
+    // window.location.href = '/signin.html';
   }
 })()
