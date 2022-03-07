@@ -1,11 +1,13 @@
 (async function () {
-  const myHeaders = new Headers({
-    'Authorization': localStorage.getItem('CognitoIdentityServiceProvider.2ld7vl8f5uknh7n37ac5ohve6j.temirlan.i-at-mvpngn.com.accessToken'),
-    'Content-Type': 'application/x-www-form-urlencoded'
-  });
-
   try {
-    const response = await fetch('https://h4w8jr79rj.execute-api.eu-central-1.amazonaws.com/prod/users', {
+    const token = await AppContext.authToken
+    if (!token) window.location.href = '/signin.html';
+
+    const myHeaders = new Headers({
+      'Authorization': token
+    });
+
+    const response = await fetch(_config.api.invokeUrl + '/users', {
       method: 'GET',
       headers: myHeaders,
       mode: 'no-cors', // no-cors, *cors, same-origin
@@ -15,9 +17,9 @@
     console.log(response);
     const result = await response.json();
     console.log(result);
+
   } catch (error) {
     console.log(error)
+    window.location.href = '/signin.html';
   }
-
-
 })()
