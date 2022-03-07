@@ -23,7 +23,7 @@
 
 function setUsers(data) {
   const container = document.getElementById('usersContainer');
-  container.insertAdjacentHTML('afterbegin', container.map(mapData).filter(Boolean).join(''));
+  container.insertAdjacentHTML('afterbegin', data.map(mapData).filter(Boolean).join(''));
 }
 
 function mapData(item) {
