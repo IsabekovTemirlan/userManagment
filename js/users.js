@@ -9,11 +9,25 @@
       },
       cache: 'no-cache',
     });
-    console.log(response);
     const result = await response.json();
-    console.log(result);
-
+    if (result && result.data) {
+      const data = JSON.parse(result.data);
+      if (data.length) {
+        setUsers(data)
+      }
+    }
   } catch (error) {
     console.log(error)
   }
 })()
+
+function setUsers(data) {
+  const container = document.getElementById('usersContainer');
+  container.insertAdjacentHTML('afterbegin', container.map(mapData).filter(Boolean).join(''));
+}
+
+function mapData(item) {
+  if (item) {
+    return `<li>${item.fullName}</li>`;
+  }
+}
